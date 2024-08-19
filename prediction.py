@@ -40,3 +40,5 @@ if __name__ == "__main__":
     # Make a prediction
     predicted_label = predict_image(cnn_model, image_to_predict)
     print(f'The predicted label is: {predicted_label}')
+    
+    #

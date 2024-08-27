@@ -1,5 +1,4 @@
 import train
-import prediction
 import os
 import tensorflow as tf
 import tkinter as tk
@@ -8,8 +7,12 @@ from gui import DrawingApp
 def main():
     # Define paths
     model_save_path = (r"C:\Users\Admin\OneDrive\Máy tính\New folder\hand write\saved models\model.keras")
-    image_to_predict = (r"C:\Users\Admin\OneDrive\Máy tính\New folder\hand write\image\image.png")
     
+    if os.path.exists(model_save_path):
+        cnn_model = tf.keras.models.load_model(model_save_path)
+    else:
+        cnn_model, _ = train.train_model(model_save_path)
+        
     model = tf.keras.models.load_model(model_save_path)
     
      # Initialize the Tkinter root window

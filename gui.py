@@ -101,6 +101,7 @@ if __name__ == "__main__":
     import tensorflow as tf
     model_save_path = (r"C:\Users\Admin\OneDrive\Máy tính\New folder\hand write\saved models\model.keras")
     model = tf.keras.models.load_model(model_save_path)
+        
     root = tk.Tk()
     app = DrawingApp(root, model)
     root.mainloop()

@@ -6,7 +6,7 @@ from gui import DrawingApp
 
 def main():
     # Define paths
-    model_save_path = (r"C:\Users\Admin\OneDrive\Máy tính\New folder\hand write\saved models\model.keras")
+    model_save_path = (r"C:\Users\Admin\OneDrive\Máy tính\New folder\Deep Learning\saved models\model.keras")
     
     if os.path.exists(model_save_path):
         cnn_model = tf.keras.models.load_model(model_save_path)
@@ -14,6 +14,10 @@ def main():
         cnn_model, _ = train.train_model(model_save_path)
         
     model = tf.keras.models.load_model(model_save_path)
+    
+    # Save the model
+    os.makedirs(os.path.dirname(model_save_path), exist_ok=True)
+    cnn_model.save(model_save_path)
     
      # Initialize the Tkinter root window
     root = tk.Tk()

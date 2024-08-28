@@ -3,10 +3,11 @@ import os
 import tensorflow as tf
 import tkinter as tk
 from gui import DrawingApp
+import cfg.config
 
 def main():
     # Define paths
-    model_save_path = (r"C:\Users\Admin\OneDrive\Máy tính\New folder\Deep Learning\saved models\model.keras")
+    model_save_path = cfg.config.model_save_path
     
     if os.path.exists(model_save_path):
         cnn_model = tf.keras.models.load_model(model_save_path)

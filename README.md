@@ -1,4 +1,4 @@
-# Using convolutional neural network to recognize handwrited number
+# Using convolutional neural network to recognize handwritten number
 using MNIST and TensorFlow to recognize number
 # Usage
 Install dependencies

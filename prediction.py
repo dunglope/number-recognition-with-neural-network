@@ -1,7 +1,11 @@
 import tensorflow as tf
+import os
 from tensorflow.keras.preprocessing import image
 import numpy as np
 import matplotlib.pyplot as plt
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def load_and_prep_image(img_path):
     # Load the image with grayscale and resize to 28x28
@@ -31,14 +35,13 @@ def predict_image(model, img_path):
     return predicted_label
 
 if __name__ == "__main__":
-    model_save_path = (r"C:\Users\Admin\OneDrive\Máy tính\New folder\hand write\saved models\model.keras")
-    image_to_predict = (r"C:\Users\Admin\OneDrive\Máy tính\New folder\hand write\image\image.png")
+    model_save_path = os.getenv("model_save_path")
     
     # Load the model
     cnn_model = tf.keras.models.load_model(model_save_path)
     
     # Make a prediction
-    predicted_label = predict_image(cnn_model, image_to_predict)
+    predicted_label = predict_image(cnn_model)
     print(f'The predicted label is: {predicted_label}')
     
     #

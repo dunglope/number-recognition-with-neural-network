@@ -13,7 +13,7 @@ def build_model(input_shape=(28, 28, 1), num_classes=10):
         Dense(num_classes, activation='softmax')
     ])
 
-    model.compile(optimizer='adam',
+    model.compile(optimizer='Adamax',
                   loss='categorical_crossentropy',
                   metrics=['accuracy'])
 

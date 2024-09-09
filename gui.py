@@ -99,7 +99,8 @@ class DrawingApp:
 
 if __name__ == "__main__":
     import tensorflow as tf
-    model_save_path = (r"C:\Users\Admin\OneDrive\Máy tính\New folder\hand write\saved models\model.keras")
+    import cfg.config
+    model_save_path = cfg.config.model_save_path
     model = tf.keras.models.load_model(model_save_path)
         
     root = tk.Tk()

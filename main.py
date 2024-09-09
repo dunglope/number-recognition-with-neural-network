@@ -3,11 +3,13 @@ import os
 import tensorflow as tf
 import tkinter as tk
 from gui import DrawingApp
-import cfg.config
+from dotenv import load_dotenv
+
+load_dotenv()
 
 def main():
     # Define paths
-    model_save_path = cfg.config.model_save_path
+    model_save_path = os.getenv("model_save_path")
     
     if os.path.exists(model_save_path):
         cnn_model = tf.keras.models.load_model(model_save_path)

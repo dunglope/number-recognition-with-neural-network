@@ -3,3 +3,4 @@ tkinter
 numpy
 matplotlib
 pillow
+python-dotenv

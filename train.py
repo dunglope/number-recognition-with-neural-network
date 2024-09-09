@@ -3,7 +3,7 @@ import data_loader
 import model
 import os
 
-def train_model(model_save_path, epochs=10):
+def train_model(model_save_path, epochs=20):
     # Load data
     (x_train, y_train), (x_test, y_test), datagen = data_loader.load_data()
 
